@@ -1,0 +1,17 @@
+release:
+  github:
+    overwrite: true
+    changelog:
+      formatted: ALWAYS
+      preset: conventional-commits
+      links: true
+      contributors:
+        format: '- {{contributorName}} ({{contributorUsernameAsLink}})'
+
+signing:
+  active: ALWAYS
+  armored: true
+  mode: COSIGN
+  cosign:
+    version: 1.5.1
+       
