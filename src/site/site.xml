@@ -42,14 +42,14 @@ under the License.
 
 	<body>
 
-		<menu ref="parent" />
+		<menu ref="parent" inherit="top" />
 
-		<menu name="Overview">
+		<menu name="Overview" inherit="top">
 			<item name="Introduction" href="./index.html" />
 			<item name="License" href="http://www.opensource.org/licenses/mit-license.php" />
 		</menu>
 
-		<menu ref="reports" />
+		<menu ref="reports" inherit="top" />
 	</body>
 
 </project>
