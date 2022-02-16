@@ -80,7 +80,7 @@ jobs:
         author_name: github-actions
         author_email: 41898282+github-actions[bot]@users.noreply.github.com
         message: "ci(release): release version v${{ steps.release_vars.outputs.version }}"
-        new_branch: "releases/run-$GITHUB_RUN_ID"
+        new_branch: "releases/run-${{ github.run_id }}"
 
     - name: publish artifacts to maven central
       run: |
@@ -105,7 +105,7 @@ jobs:
         JRELEASER_TWITTER_CONSUMER_SECRET:  ${{ secrets.TWITTER_CONSUMER_SECRET }}
         JRELEASER_TWITTER_ACCESS_TOKEN:  ${{ secrets.TWITTER_ACCESS_TOKEN }}
         JRELEASER_TWITTER_ACCESS_TOKEN_SECRET:  ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
-        JRELEASER_BRANCH: "releases/run-$GITHUB_RUN_ID"
+        JRELEASER_BRANCH: "releases/run-${{ github.run_id }}"
 
     - name: publish website to gh-pages
       uses: JamesIves/github-pages-deploy-action@v4.2.3
@@ -114,11 +114,11 @@ jobs:
         folder: ${{ secrets.MAVEN_SITE_STAGE_LOCATION }}
     
     - name: merge back changes to target branch
-      uses: devmasx/merge-branch@v1.3.1
+      uses: devmasx/merge-branch@v1.4.0
       with:
         type: now
         target_branch: ${{ steps.release_vars.outputs.target_branch }}
-        from_branch: "releases/run-$GITHUB_RUN_ID"
+        from_branch: "releases/run-${{ github.run_id }}"
         github_token: ${{ secrets.GITHUB_TOKEN }}
         message: "Merge release branch into main"
 
@@ -167,7 +167,7 @@ jobs:
     - name: drop run branch
       uses: julb/action-manage-branch@v1
       with:
-        name: "releases/run-$GITHUB_RUN_ID"
+        name: "releases/run-${{ github.run_id }}"
         state: absent
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
