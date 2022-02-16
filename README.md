@@ -1,7 +1,7 @@
 [![Build](https://github.com/julbme/java-parent/actions/workflows/maven-build.yml/badge.svg)](https://github.com/julbme/java-parent/actions/workflows/maven-build.yml)
 [![Lint Commit Messages](https://github.com/julbme/java-parent/actions/workflows/commitlint.yml/badge.svg)](https://github.com/julbme/java-parent/actions/workflows/commitlint.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=julbme_java-parent&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=julbme_java-parent)
-![Maven Central](https://img.shields.io/maven-central/v/me.julb/java-parent)
+![Maven Central](https://img.shields.io/maven-central/v/me.julb/parent)
 
 # Java Parent POM for Julb.me organization
 
