@@ -11,7 +11,3 @@ release:
 signing:
   active: ALWAYS
   armored: true
-  mode: COSIGN
-  cosign:
-    version: 1.5.1
-       

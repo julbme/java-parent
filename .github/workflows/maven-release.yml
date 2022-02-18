@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - uses: actions/setup-java@v2
       with:
         java-version: 17
@@ -44,7 +46,9 @@ jobs:
       run: ./mvnw -B versions:update-parent
 
     - name: updating version in files
-      run: ./mvnw -B validate -DchangeVersionCustom=${{ steps.release_vars.outputs.version }}
+      run: |
+        ./mvnw -B validate -DchangeVersionCustom=${{ steps.release_vars.outputs.version }}
+        echo ${{ steps.release_vars.outputs.version }} > VERSION
 
     - name: build and test
       run: ./mvnw -B verify
@@ -130,9 +134,10 @@ jobs:
     - name: bumping version
       id: next_vars
       run: |
-        ./mvnw validate -DchangeVersionPatch
+        ./mvnw -B validate -DchangeVersionPatch
         echo ::set-output name=next_version::$(./mvnw -q validate -DcurrentVersion)
         echo ::set-output name=next_released_version::$(./mvnw -q validate -DcurrentReleaseVersion)
+        echo $(./mvnw -q validate -DcurrentVersion) > VERSION
 
     - uses: EndBug/add-and-commit@v7
       with:
