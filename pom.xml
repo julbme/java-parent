@@ -72,6 +72,7 @@
 		<maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
 		<maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
 		<maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
+		<maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
 		<maven-site-plugin.version>3.10.0</maven-site-plugin.version>
 		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
 		<maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
@@ -438,6 +439,11 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${maven-shade-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>${maven-site-plugin.version}</version>
 				</plugin>
@@ -548,6 +554,24 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<echo file="VERSION">${nextPatchVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -571,6 +595,24 @@
 								<phase>validate</phase>
 								<configuration>
 									<newVersion>${nextMinorVersion}</newVersion>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<echo file="VERSION">${nextMinorVersion}</echo>
+									</target>
 								</configuration>
 							</execution>
 						</executions>
@@ -602,6 +644,24 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<echo file="VERSION">${nextMajorVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -629,6 +689,24 @@
 							</execution>
 						</executions>
 					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<echo file="VERSION">${releaseVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
@@ -652,6 +730,24 @@
 								<phase>validate</phase>
 								<configuration>
 									<newVersion>${changeVersionCustom}</newVersion>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<echo file="VERSION">${changeVersionCustom}</echo>
+									</target>
 								</configuration>
 							</execution>
 						</executions>
