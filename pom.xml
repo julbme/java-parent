@@ -47,6 +47,7 @@
 		<logback.version>1.2.10</logback.version>
 		<lombok.version>1.18.22</lombok.version>
 		<mockito-bom.version>4.3.1</mockito-bom.version>
+		<semver4j.version>3.1.0</semver4j.version>
 		<slf4j-api.version>1.7.35</slf4j-api.version>
 		<spring-boot-dependencies.version>2.6.3</spring-boot-dependencies.version>
 		<spring-cloud-dependencies.version>2021.0.0</spring-cloud-dependencies.version>
@@ -226,6 +227,11 @@
 				<version>${mockito-bom.version}</version>
 				<scope>import</scope>
 				<type>pom</type>
+			</dependency>
+			<dependency>
+				<groupId>com.vdurmont</groupId>
+				<artifactId>semver4j</artifactId>
+				<version>${semver4j.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
