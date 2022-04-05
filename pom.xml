@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -7,80 +8,16 @@
 	<packaging>pom</packaging>
 
 	<name>Julb.me :: Parent</name>
-	<description>
-		This POM is the parent POM for all OSS Julb.me projects.
-	</description>
+	<description>This POM is the parent POM for all OSS Julb.me projects.</description>
+
+	<url>https://julbme.github.io/java-parent/</url>
+
+	<inceptionYear>2022</inceptionYear>
 
 	<organization>
 		<name>Julb.me</name>
 		<url>https://www.julb.me</url>
 	</organization>
-
-	<inceptionYear>2022</inceptionYear>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar.organization>julbme</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-
-		<sonar.projectKey>julbme_java-parent</sonar.projectKey>
-
-		<nextMajorVersion>${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT</nextMajorVersion>
-		<nextMinorVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</nextMinorVersion>
-		<nextPatchVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT</nextPatchVersion>
-		<releaseVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</releaseVersion>
-
-		<assertj-core.version>3.22.0</assertj-core.version>
-		<awaitility.version>4.1.1</awaitility.version>
-		<client-java.version>14.0.0</client-java.version>
-		<commons-codec.version>1.15</commons-codec.version>
-		<commons-collections4.version>4.4</commons-collections4.version>
-		<commons-io.version>2.11.0</commons-io.version>
-		<commons-lang3.version>3.12.0</commons-lang3.version>
-		<commons-text.version>1.9</commons-text.version>
-		<consul-api.version>1.4.5</consul-api.version>
-		<eclipse-collections.version>11.0.0</eclipse-collections.version>
-		<github-api.version>1.301</github-api.version>
-		<guava.version>31.0.1-jre</guava.version>
-		<jackson-bom.version>2.13.1</jackson-bom.version>
-		<junit-jupiter-engine.version>5.8.2</junit-jupiter-engine.version>
-		<logback.version>1.2.10</logback.version>
-		<lombok.version>1.18.22</lombok.version>
-		<mockito-bom.version>4.3.1</mockito-bom.version>
-		<semver4j.version>3.1.0</semver4j.version>
-		<slf4j-api.version>1.7.35</slf4j-api.version>
-		<spring-boot-dependencies.version>2.6.3</spring-boot-dependencies.version>
-		<spring-cloud-dependencies.version>2021.0.0</spring-cloud-dependencies.version>
-		<system-lambda.version>1.2.1</system-lambda.version>
-		<testcontainers-bom.version>1.16.3</testcontainers-bom.version>
-
-		<build-helper-maven-plugin.version>3.3.0</build-helper-maven-plugin.version>
-		<git-commit-id-maven-plugin.version>5.0.0</git-commit-id-maven-plugin.version>
-		<jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
-		<jib-maven-plugin.version>3.2.0</jib-maven-plugin.version>
-		<jreleaser-maven-plugin.version>1.0.0-M2</jreleaser-maven-plugin.version>
-		<maven-antrun-plugin.version>3.0.0</maven-antrun-plugin.version>
-		<maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
-		<maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
-		<maven-clean-plugin.version>3.1.0</maven-clean-plugin.version>
-		<maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
-		<maven-deploy-plugin.version>3.0.0-M2</maven-deploy-plugin.version>
-		<maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
-		<maven-fluido-skin.version>1.10.0</maven-fluido-skin.version>
-		<maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-		<maven-help-plugin.version>3.2.0</maven-help-plugin.version>
-		<maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
-		<maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
-		<maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
-		<maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
-		<maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
-		<maven-site-plugin.version>3.10.0</maven-site-plugin.version>
-		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-		<maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-		<maven-surefire-report-plugin.version>3.0.0-M5</maven-surefire-report-plugin.version>
-		<sonar-maven-plugin.version>3.9.1.2184</sonar-maven-plugin.version>
-		<versions-maven-plugin.version>2.9.0</versions-maven-plugin.version>
-	</properties>
 
 	<licenses>
 		<license>
@@ -89,19 +26,6 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
-
-	<url>https://julbme.github.io/java-parent/</url>
-
-	<issueManagement>
-		<url>https://github.com/julbme/java-parent/issues</url>
-		<system>GitHub Issues</system>
-	</issueManagement>
-
-	<scm>
-		<url>https://github.com/julbme/java-parent</url>
-		<connection>scm:git:git://github.com/julbme/java-parent.git</connection>
-		<developerConnection>scm:git:git@github.com:julbme/java-parent.git</developerConnection>
-	</scm>
 
 	<developers>
 		<developer>
@@ -112,174 +36,585 @@
 		</developer>
 	</developers>
 
+	<scm>
+		<connection>scm:git:git://github.com/julbme/java-parent.git</connection>
+		<developerConnection>scm:git:git@github.com:julbme/java-parent.git</developerConnection>
+		<url>https://github.com/julbme/java-parent</url>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/julbme/java-parent/issues</url>
+	</issueManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh-releases</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh-snapshots</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<site>
+			<id>gh-pages</id>
+			<name>GitHub Pages</name>
+			<url>https://julbme.github.io/java-parent/</url>
+		</site>
+	</distributionManagement>
+
+	<properties>
+
+		<j3.dependency.assertj-core.version>3.22.0</j3.dependency.assertj-core.version>
+		<j3.dependency.awaitility.version>4.2.0</j3.dependency.awaitility.version>
+		<j3.dependency.client-java.version>15.0.0</j3.dependency.client-java.version>
+		<j3.dependency.commons-codec.version>1.15</j3.dependency.commons-codec.version>
+		<j3.dependency.commons-collections4.version>4.4</j3.dependency.commons-collections4.version>
+		<j3.dependency.commons-io.version>2.11.0</j3.dependency.commons-io.version>
+		<j3.dependency.commons-lang3.version>3.12.0</j3.dependency.commons-lang3.version>
+		<j3.dependency.commons-text.version>1.9</j3.dependency.commons-text.version>
+		<j3.dependency.consul-api.version>1.4.5</j3.dependency.consul-api.version>
+		<j3.dependency.eclipse-collections.version>11.0.0</j3.dependency.eclipse-collections.version>
+		<j3.dependency.github-api.version>1.303</j3.dependency.github-api.version>
+		<j3.dependency.guava.version>31.1-jre</j3.dependency.guava.version>
+		<j3.dependency.jackson-bom.version>2.13.1</j3.dependency.jackson-bom.version>
+		<j3.dependency.junit-jupiter-engine.version>5.8.2</j3.dependency.junit-jupiter-engine.version>
+		<j3.dependency.logback.version>1.2.11</j3.dependency.logback.version>
+		<j3.dependency.lombok.version>1.18.22</j3.dependency.lombok.version>
+		<j3.dependency.mockito-bom.version>4.4.0</j3.dependency.mockito-bom.version>
+		<j3.dependency.semver4j.version>3.1.0</j3.dependency.semver4j.version>
+		<j3.dependency.slf4j-api.version>1.7.36</j3.dependency.slf4j-api.version>
+		<j3.dependency.spring-boot-dependencies.version>2.6.6</j3.dependency.spring-boot-dependencies.version>
+		<j3.dependency.spring-cloud-dependencies.version>2021.0.1</j3.dependency.spring-cloud-dependencies.version>
+		<j3.dependency.system-lambda.version>1.2.1</j3.dependency.system-lambda.version>
+		<j3.dependency.testcontainers-bom.version>1.16.3</j3.dependency.testcontainers-bom.version>
+
+		<j3.plugin.build-helper-maven-plugin.version>3.3.0</j3.plugin.build-helper-maven-plugin.version>
+		<j3.plugin.git-commit-id-maven-plugin.version>5.0.0</j3.plugin.git-commit-id-maven-plugin.version>
+		<j3.plugin.jacoco-maven-plugin.version>0.8.7</j3.plugin.jacoco-maven-plugin.version>
+		<j3.plugin.jib-maven-plugin.version>3.2.1</j3.plugin.jib-maven-plugin.version>
+		<j3.plugin.jreleaser-maven-plugin.version>1.0.0-RC2</j3.plugin.jreleaser-maven-plugin.version>
+		<j3.plugin.maven-antrun-plugin.version>3.0.0</j3.plugin.maven-antrun-plugin.version>
+		<j3.plugin.maven-assembly-plugin.version>3.3.0</j3.plugin.maven-assembly-plugin.version>
+		<j3.plugin.maven-clean-plugin.version>3.1.0</j3.plugin.maven-clean-plugin.version>
+		<j3.plugin.maven-compiler-plugin.version>3.9.0</j3.plugin.maven-compiler-plugin.version>
+		<j3.plugin.maven-deploy-plugin.version>3.0.0-M2</j3.plugin.maven-deploy-plugin.version>
+		<j3.plugin.maven-enforcer-plugin.version>3.0.0</j3.plugin.maven-enforcer-plugin.version>
+		<j3.plugin.maven-fluido-skin.version>1.10.0</j3.plugin.maven-fluido-skin.version>
+		<j3.plugin.maven-gpg-plugin.version>3.0.1</j3.plugin.maven-gpg-plugin.version>
+		<j3.plugin.maven-help-plugin.version>3.2.0</j3.plugin.maven-help-plugin.version>
+		<j3.plugin.maven-install-plugin.version>3.0.0-M1</j3.plugin.maven-install-plugin.version>
+		<j3.plugin.maven-jar-plugin.version>3.2.2</j3.plugin.maven-jar-plugin.version>
+		<j3.plugin.maven-javadoc-plugin.version>3.3.2</j3.plugin.maven-javadoc-plugin.version>
+		<j3.plugin.maven-project-info-reports-plugin.version>3.1.2</j3.plugin.maven-project-info-reports-plugin.version>
+		<j3.plugin.maven-shade-plugin.version>3.3.0</j3.plugin.maven-shade-plugin.version>
+		<j3.plugin.maven-site-plugin.version>3.10.0</j3.plugin.maven-site-plugin.version>
+		<j3.plugin.maven-source-plugin.version>3.2.1</j3.plugin.maven-source-plugin.version>
+		<j3.plugin.maven-surefire-plugin.version>3.0.0-M5</j3.plugin.maven-surefire-plugin.version>
+		<j3.plugin.maven-surefire-report-plugin.version>3.0.0-M5</j3.plugin.maven-surefire-report-plugin.version>
+		<j3.plugin.prettier-plugin-properties.version>0.1.0</j3.plugin.prettier-plugin-properties.version>
+		<j3.plugin.prettier-plugin-sh.version>0.10.0</j3.plugin.prettier-plugin-sh.version>
+		<j3.plugin.prettier-xml.version>2.0.1</j3.plugin.prettier-xml.version>
+		<j3.plugin.prettier.version>2.6.2</j3.plugin.prettier.version>
+		<j3.plugin.sonar-maven-plugin.version>3.9.1.2184</j3.plugin.sonar-maven-plugin.version>
+		<j3.plugin.spotless-maven-plugin.version>2.22.0</j3.plugin.spotless-maven-plugin.version>
+		<j3.plugin.versions-maven-plugin.version>2.9.0</j3.plugin.versions-maven-plugin.version>
+
+		<j3.var.nextMajorVersion>${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT</j3.var.nextMajorVersion>
+		<j3.var.nextMinorVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</j3.var.nextMinorVersion>
+		<j3.var.nextPatchVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT</j3.var.nextPatchVersion>
+		<j3.var.releaseVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</j3.var.releaseVersion>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.organization>julbme</sonar.organization>
+		<sonar.projectKey>julbme_java-parent</sonar.projectKey>
+	</properties>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.assertj</groupId>
-				<artifactId>assertj-core</artifactId>
-				<version>${assertj-core.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.awaitility</groupId>
-				<artifactId>awaitility</artifactId>
-				<version>${awaitility.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.kubernetes</groupId>
-				<artifactId>client-java</artifactId>
-				<version>${client-java.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>${commons-codec.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-collections4</artifactId>
-				<version>${commons-collections4.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>${commons-io.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>${commons-lang3.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-text</artifactId>
-				<version>${commons-text.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.ecwid.consul</groupId>
-				<artifactId>consul-api</artifactId>
-				<version>${consul-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.collections</groupId>
-				<artifactId>eclipse-collections</artifactId>
-				<version>${eclipse-collections.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.collections</groupId>
-				<artifactId>eclipse-collections-api</artifactId>
-				<version>${eclipse-collections.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.kohsuke</groupId>
-				<artifactId>github-api</artifactId>
-				<version>${github-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.guava</groupId>
-				<artifactId>guava</artifactId>
-				<version>${guava.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>com.fasterxml.jackson</groupId>
 				<artifactId>jackson-bom</artifactId>
-				<version>${jackson-bom.version}</version>
-				<scope>import</scope>
+				<version>${j3.dependency.jackson-bom.version}</version>
 				<type>pom</type>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
-				<version>${slf4j-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>jul-to-slf4j</artifactId>
-				<version>${slf4j-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.junit.jupiter</groupId>
-				<artifactId>junit-jupiter-engine</artifactId>
-				<version>${junit-jupiter-engine.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>${logback.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-core</artifactId>
-				<version>${logback.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>log4j-over-slf4j</artifactId>
-				<version>${slf4j-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<version>${lombok.version}</version>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-bom</artifactId>
-				<version>${mockito-bom.version}</version>
-				<scope>import</scope>
+				<version>${j3.dependency.mockito-bom.version}</version>
 				<type>pom</type>
-			</dependency>
-			<dependency>
-				<groupId>com.vdurmont</groupId>
-				<artifactId>semver4j</artifactId>
-				<version>${semver4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j-api.version}</version>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>${spring-boot-dependencies.version}</version>
-				<scope>import</scope>
+				<version>${j3.dependency.spring-boot-dependencies.version}</version>
 				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud-dependencies.version}</version>
-				<scope>import</scope>
+				<version>${j3.dependency.spring-cloud-dependencies.version}</version>
 				<type>pom</type>
-			</dependency>
-			<dependency>
-				<groupId>com.github.stefanbirkner</groupId>
-				<artifactId>system-lambda</artifactId>
-				<version>${system-lambda.version}</version>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.testcontainers</groupId>
 				<artifactId>testcontainers-bom</artifactId>
-				<version>${testcontainers-bom.version}</version>
-				<scope>import</scope>
+				<version>${j3.dependency.testcontainers-bom.version}</version>
 				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>${j3.dependency.assertj-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.awaitility</groupId>
+				<artifactId>awaitility</artifactId>
+				<version>${j3.dependency.awaitility.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.kubernetes</groupId>
+				<artifactId>client-java</artifactId>
+				<version>${j3.dependency.client-java.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${j3.dependency.commons-codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-collections4</artifactId>
+				<version>${j3.dependency.commons-collections4.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${j3.dependency.commons-io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${j3.dependency.commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-text</artifactId>
+				<version>${j3.dependency.commons-text.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.ecwid.consul</groupId>
+				<artifactId>consul-api</artifactId>
+				<version>${j3.dependency.consul-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.collections</groupId>
+				<artifactId>eclipse-collections</artifactId>
+				<version>${j3.dependency.eclipse-collections.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.collections</groupId>
+				<artifactId>eclipse-collections-api</artifactId>
+				<version>${j3.dependency.eclipse-collections.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.kohsuke</groupId>
+				<artifactId>github-api</artifactId>
+				<version>${j3.dependency.github-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${j3.dependency.guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${j3.dependency.slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jul-to-slf4j</artifactId>
+				<version>${j3.dependency.slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${j3.dependency.junit-jupiter-engine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>log4j-over-slf4j</artifactId>
+				<version>${j3.dependency.slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${j3.dependency.logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${j3.dependency.logback.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${j3.dependency.lombok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.vdurmont</groupId>
+				<artifactId>semver4j</artifactId>
+				<version>${j3.dependency.semver4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${j3.dependency.slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.stefanbirkner</groupId>
+				<artifactId>system-lambda</artifactId>
+				<version>${j3.dependency.system-lambda.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.diffplug.spotless</groupId>
+					<artifactId>spotless-maven-plugin</artifactId>
+					<version>${j3.plugin.spotless-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>com.google.cloud.tools</groupId>
+					<artifactId>jib-maven-plugin</artifactId>
+					<version>${j3.plugin.jib-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>io.github.git-commit-id</groupId>
+					<artifactId>git-commit-id-maven-plugin</artifactId>
+					<version>${j3.plugin.git-commit-id-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>${j3.plugin.maven-antrun-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${j3.plugin.maven-assembly-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${j3.plugin.maven-clean-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${j3.plugin.maven-compiler-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${j3.plugin.maven-deploy-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>${j3.plugin.maven-enforcer-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>${j3.plugin.maven-gpg-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-help-plugin</artifactId>
+					<version>${j3.plugin.maven-help-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${j3.plugin.maven-install-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${j3.plugin.maven-jar-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${j3.plugin.maven-javadoc-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>${j3.plugin.maven-project-info-reports-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>${j3.plugin.maven-shade-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${j3.plugin.maven-site-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${j3.plugin.maven-source-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${j3.plugin.maven-surefire-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-report-plugin</artifactId>
+					<version>${j3.plugin.maven-surefire-report-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>${j3.plugin.build-helper-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>${j3.plugin.versions-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>${j3.plugin.jacoco-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.jreleaser</groupId>
+					<artifactId>jreleaser-maven-plugin</artifactId>
+					<version>${j3.plugin.jreleaser-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>${j3.plugin.sonar-maven-plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>parse-version</id>
-						<goals>
-							<goal>parse-version</goal>
-						</goals>
-					</execution>
-				</executions>
+				<groupId>com.diffplug.spotless</groupId>
+				<artifactId>spotless-maven-plugin</artifactId>
+				<configuration>
+					<formats>
+						<format>
+							<includes>
+								<include>**/*.json</include>
+							</includes>
+							<excludes>
+								<exclude>target/**</exclude>
+							</excludes>
+							<prettier>
+								<prettierVersion>${j3.plugin.prettier.version}</prettierVersion>
+								<config>
+									<parser>json</parser>
+									<tabWidth>4</tabWidth>
+								</config>
+							</prettier>
+						</format>
+						<format>
+							<includes>
+								<include>**/*.yaml</include>
+								<include>**/*.yml</include>
+							</includes>
+							<excludes>
+								<exclude>target/**</exclude>
+							</excludes>
+							<prettier>
+								<prettierVersion>${j3.plugin.prettier.version}</prettierVersion>
+								<config>
+									<parser>yaml</parser>
+									<tabWidth>2</tabWidth>
+								</config>
+							</prettier>
+						</format>
+						<format>
+							<includes>
+								<include>**/*.xml</include>
+							</includes>
+							<excludes>
+								<exclude>pom.xml</exclude>
+								<exclude>target/**</exclude>
+							</excludes>
+							<prettier>
+								<devDependencyProperties>
+									<property>
+										<name>prettier</name>
+										<value>${j3.plugin.prettier.version}</value>
+									</property>
+									<property>
+										<name>@prettier/plugin-xml</name>
+										<value>${j3.plugin.prettier-xml.version}</value>
+									</property>
+									<property>
+										<name>prettier-plugin-properties</name>
+										<value>${j3.plugin.prettier-plugin-properties.version}</value>
+									</property>
+									<property>
+										<name>prettier-plugin-sh</name>
+										<value>${j3.plugin.prettier-plugin-sh.version}</value>
+									</property>
+								</devDependencyProperties>
+								<config>
+									<parser>xml</parser>
+									<tabWidth>4</tabWidth>
+								</config>
+							</prettier>
+						</format>
+
+						<format>
+							<includes>
+								<include>**/*.properties</include>
+							</includes>
+							<prettier>
+								<devDependencyProperties>
+									<property>
+										<name>prettier</name>
+										<value>${j3.plugin.prettier.version}</value>
+									</property>
+									<property>
+										<name>@prettier/plugin-xml</name>
+										<value>${j3.plugin.prettier-xml.version}</value>
+									</property>
+									<property>
+										<name>prettier-plugin-properties</name>
+										<value>${j3.plugin.prettier-plugin-properties.version}</value>
+									</property>
+									<property>
+										<name>prettier-plugin-sh</name>
+										<value>${j3.plugin.prettier-plugin-sh.version}</value>
+									</property>
+								</devDependencyProperties>
+								<config>
+									<parser>dot-properties</parser>
+									<keySeparator>=</keySeparator>
+									<printWidth>120</printWidth>
+								</config>
+							</prettier>
+						</format>
+
+						<format>
+							<includes>
+								<include>**/*.sh</include>
+							</includes>
+							<prettier>
+								<devDependencyProperties>
+									<property>
+										<name>prettier</name>
+										<value>${j3.plugin.prettier.version}</value>
+									</property>
+									<property>
+										<name>@prettier/plugin-xml</name>
+										<value>${j3.plugin.prettier-xml.version}</value>
+									</property>
+									<property>
+										<name>prettier-plugin-properties</name>
+										<value>${j3.plugin.prettier-plugin-properties.version}</value>
+									</property>
+									<property>
+										<name>prettier-plugin-sh</name>
+										<value>${j3.plugin.prettier-plugin-sh.version}</value>
+									</property>
+								</devDependencyProperties>
+								<config>
+									<parser>sh</parser>
+									<tabWidth>4</tabWidth>
+								</config>
+							</prettier>
+						</format>
+					</formats>
+					<java>
+						<excludes>
+							<exclude>target/**</exclude>
+						</excludes>
+						<palantirJavaFormat />
+						<importOrder>
+							<order>java,javax,org,com,io,me,,\\#</order>
+						</importOrder>
+						<licenseHeader>
+							<content>/**
+ * MIT License
+ *
+ * Copyright (c) 2017-$YEAR Julb
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */</content>
+						</licenseHeader>
+						<removeUnusedImports />
+					</java>
+					<markdown>
+						<includes>
+							<include>**/*.md</include>
+						</includes>
+						<excludes>
+							<exclude>target/**</exclude>
+						</excludes>
+						<flexmark />
+					</markdown>
+					<pom>
+						<sortPom>
+							<expandEmptyElements>false</expandEmptyElements>
+							<spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
+							<nrOfIndentSpace>-1</nrOfIndentSpace>
+							<sortDependencies>scope,artifactId</sortDependencies>
+							<sortExecutions>true</sortExecutions>
+							<sortModules>true</sortModules>
+							<sortProperties>true</sortProperties>
+							<sortPlugins>groupId,artifactId</sortPlugins>
+						</sortPom>
+					</pom>
+					<sql>
+						<includes>
+							<include>**/*.sql</include>
+						</includes>
+						<excludes>
+							<exclude>target/**</exclude>
+						</excludes>
+						<dbeaver />
+					</sql>
+				</configuration>
 			</plugin>
 
 			<plugin>
@@ -302,14 +637,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.jreleaser</groupId>
-				<artifactId>jreleaser-maven-plugin</artifactId>
-				<inherited>false</inherited>
-				<configuration>
-					<configFile>jreleaser.yml</configFile>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -350,150 +677,38 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>parse-version</id>
+						<goals>
+							<goal>parse-version</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<rulesUri>file://${basedir}/version-rules.xml</rulesUri>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jreleaser</groupId>
+				<artifactId>jreleaser-maven-plugin</artifactId>
+				<inherited>false</inherited>
+				<configuration>
+					<configFile>jreleaser.yml</configFile>
+				</configuration>
+			</plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>${build-helper-maven-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>io.github.git-commit-id</groupId>
-					<artifactId>git-commit-id-maven-plugin</artifactId>
-					<version>${git-commit-id-maven-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.jacoco</groupId>
-					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>${jacoco-maven-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>com.google.cloud.tools</groupId>
-					<artifactId>jib-maven-plugin</artifactId>
-					<version>${jib-maven-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.jreleaser</groupId>
-					<artifactId>jreleaser-maven-plugin</artifactId>
-					<version>${jreleaser-maven-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-antrun-plugin</artifactId>
-					<version>${maven-antrun-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<version>${maven-assembly-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>${maven-checkstyle-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>${maven-clean-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${maven-compiler-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>${maven-deploy-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-enforcer-plugin</artifactId>
-					<version>${maven-enforcer-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-gpg-plugin</artifactId>
-					<version>${maven-gpg-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-help-plugin</artifactId>
-					<version>${maven-help-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>${maven-install-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>${maven-jar-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>${maven-javadoc-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>${maven-project-info-reports-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-shade-plugin</artifactId>
-					<version>${maven-shade-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>${maven-site-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>${maven-source-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${maven-surefire-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-report-plugin</artifactId>
-					<version>${maven-surefire-report-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.sonarsource.scanner.maven</groupId>
-					<artifactId>sonar-maven-plugin</artifactId>
-					<version>${sonar-maven-plugin.version}</version>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>versions-maven-plugin</artifactId>
-					<version>${versions-maven-plugin.version}</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 	<reporting>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>checkstyle</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -521,10 +736,10 @@
 						<artifactId>maven-antrun-plugin</artifactId>
 						<executions>
 							<execution>
-								<phase>compile</phase>
 								<goals>
 									<goal>run</goal>
 								</goals>
+								<phase>compile</phase>
 								<configuration>
 									<target>
 										<echoproperties />
@@ -546,6 +761,24 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<phase>validate</phase>
+								<configuration>
+									<target>
+										<echo file="VERSION">${j3.var.nextPatchVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>versions-maven-plugin</artifactId>
 						<executions>
@@ -555,25 +788,7 @@
 								</goals>
 								<phase>validate</phase>
 								<configuration>
-									<newVersion>${nextPatchVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<target>
-										<echo file="VERSION">${nextPatchVersion}</echo>
-									</target>
+									<newVersion>${j3.var.nextPatchVersion}</newVersion>
 								</configuration>
 							</execution>
 						</executions>
@@ -591,6 +806,24 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<phase>validate</phase>
+								<configuration>
+									<target>
+										<echo file="VERSION">${j3.var.nextMinorVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>versions-maven-plugin</artifactId>
 						<executions>
@@ -600,25 +833,7 @@
 								</goals>
 								<phase>validate</phase>
 								<configuration>
-									<newVersion>${nextMinorVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<target>
-										<echo file="VERSION">${nextMinorVersion}</echo>
-									</target>
+									<newVersion>${j3.var.nextMinorVersion}</newVersion>
 								</configuration>
 							</execution>
 						</executions>
@@ -636,6 +851,24 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<phase>validate</phase>
+								<configuration>
+									<target>
+										<echo file="VERSION">${j3.var.nextMajorVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>versions-maven-plugin</artifactId>
 						<executions>
@@ -645,25 +878,7 @@
 								</goals>
 								<phase>validate</phase>
 								<configuration>
-									<newVersion>${nextMajorVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<target>
-										<echo file="VERSION">${nextMajorVersion}</echo>
-									</target>
+									<newVersion>${j3.var.nextMajorVersion}</newVersion>
 								</configuration>
 							</execution>
 						</executions>
@@ -681,6 +896,24 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<phase>validate</phase>
+								<configuration>
+									<target>
+										<echo file="VERSION">${j3.var.releaseVersion}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>versions-maven-plugin</artifactId>
 						<executions>
@@ -690,25 +923,7 @@
 								</goals>
 								<phase>validate</phase>
 								<configuration>
-									<newVersion>${releaseVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<target>
-										<echo file="VERSION">${releaseVersion}</echo>
-									</target>
+									<newVersion>${j3.var.releaseVersion}</newVersion>
 								</configuration>
 							</execution>
 						</executions>
@@ -726,6 +941,24 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>update-version-file</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<phase>validate</phase>
+								<configuration>
+									<target>
+										<echo file="VERSION">${changeVersionCustom}</echo>
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>versions-maven-plugin</artifactId>
 						<executions>
@@ -736,24 +969,6 @@
 								<phase>validate</phase>
 								<configuration>
 									<newVersion>${changeVersionCustom}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<target>
-										<echo file="VERSION">${changeVersionCustom}</echo>
-									</target>
 								</configuration>
 							</execution>
 						</executions>
@@ -808,7 +1023,7 @@
 								</goals>
 								<phase>validate</phase>
 								<configuration>
-									<expression>releaseVersion</expression>
+									<expression>j3.var.releaseVersion</expression>
 									<forceStdout>true</forceStdout>
 								</configuration>
 							</execution>
@@ -833,10 +1048,10 @@
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
-								<phase>verify</phase>
 								<goals>
 									<goal>sign</goal>
 								</goals>
+								<phase>verify</phase>
 								<configuration>
 									<!-- Prevent gpg from using pinentry programs -->
 									<gpgArguments>
@@ -851,20 +1066,4 @@
 			</build>
 		</profile>
 	</profiles>
-
-	<distributionManagement>
-		<site>
-			<id>gh-pages</id>
-			<name>GitHub Pages</name>
-			<url>https://julbme.github.io/java-parent/</url>
-		</site>
-		<snapshotRepository>
-			<id>ossrh-snapshots</id>
-			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh-releases</id>
-			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
-</project> 
+</project>
