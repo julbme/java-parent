@@ -693,7 +693,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
 				<configuration>
-					<rulesUri>file://${basedir}/version-rules.xml</rulesUri>
+					<rulesUri>https://julbme.github.io/java-parent/maven/version-rules.xml</rulesUri>
 				</configuration>
 			</plugin>
 			<plugin>

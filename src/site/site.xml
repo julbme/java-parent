@@ -62,6 +62,7 @@ under the License.
                 name="Eclipse - Organize imports"
                 href="./eclipse/organize-imports.importorder"
             />
+			<item name="Maven - Version rules" href="./maven/codetemplates.xml" />
 		</menu>
 	</body>
 
