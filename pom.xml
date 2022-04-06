@@ -91,13 +91,13 @@
 
 		<j3.plugin.build-helper-maven-plugin.version>3.3.0</j3.plugin.build-helper-maven-plugin.version>
 		<j3.plugin.git-commit-id-maven-plugin.version>5.0.0</j3.plugin.git-commit-id-maven-plugin.version>
-		<j3.plugin.jacoco-maven-plugin.version>0.8.7</j3.plugin.jacoco-maven-plugin.version>
+		<j3.plugin.jacoco-maven-plugin.version>0.8.8</j3.plugin.jacoco-maven-plugin.version>
 		<j3.plugin.jib-maven-plugin.version>3.2.1</j3.plugin.jib-maven-plugin.version>
 		<j3.plugin.jreleaser-maven-plugin.version>1.0.0-RC2</j3.plugin.jreleaser-maven-plugin.version>
 		<j3.plugin.maven-antrun-plugin.version>3.0.0</j3.plugin.maven-antrun-plugin.version>
 		<j3.plugin.maven-assembly-plugin.version>3.3.0</j3.plugin.maven-assembly-plugin.version>
-		<j3.plugin.maven-clean-plugin.version>3.1.0</j3.plugin.maven-clean-plugin.version>
-		<j3.plugin.maven-compiler-plugin.version>3.9.0</j3.plugin.maven-compiler-plugin.version>
+		<j3.plugin.maven-clean-plugin.version>3.2.0</j3.plugin.maven-clean-plugin.version>
+		<j3.plugin.maven-compiler-plugin.version>3.10.1</j3.plugin.maven-compiler-plugin.version>
 		<j3.plugin.maven-deploy-plugin.version>3.0.0-M2</j3.plugin.maven-deploy-plugin.version>
 		<j3.plugin.maven-enforcer-plugin.version>3.0.0</j3.plugin.maven-enforcer-plugin.version>
 		<j3.plugin.maven-fluido-skin.version>1.10.0</j3.plugin.maven-fluido-skin.version>
@@ -106,19 +106,19 @@
 		<j3.plugin.maven-install-plugin.version>3.0.0-M1</j3.plugin.maven-install-plugin.version>
 		<j3.plugin.maven-jar-plugin.version>3.2.2</j3.plugin.maven-jar-plugin.version>
 		<j3.plugin.maven-javadoc-plugin.version>3.3.2</j3.plugin.maven-javadoc-plugin.version>
-		<j3.plugin.maven-project-info-reports-plugin.version>3.1.2</j3.plugin.maven-project-info-reports-plugin.version>
+		<j3.plugin.maven-project-info-reports-plugin.version>3.2.2</j3.plugin.maven-project-info-reports-plugin.version>
 		<j3.plugin.maven-shade-plugin.version>3.3.0</j3.plugin.maven-shade-plugin.version>
-		<j3.plugin.maven-site-plugin.version>3.10.0</j3.plugin.maven-site-plugin.version>
+		<j3.plugin.maven-site-plugin.version>3.11.0</j3.plugin.maven-site-plugin.version>
 		<j3.plugin.maven-source-plugin.version>3.2.1</j3.plugin.maven-source-plugin.version>
-		<j3.plugin.maven-surefire-plugin.version>3.0.0-M5</j3.plugin.maven-surefire-plugin.version>
-		<j3.plugin.maven-surefire-report-plugin.version>3.0.0-M5</j3.plugin.maven-surefire-report-plugin.version>
+		<j3.plugin.maven-surefire-plugin.version>3.0.0-M6</j3.plugin.maven-surefire-plugin.version>
+		<j3.plugin.maven-surefire-report-plugin.version>3.0.0-M6</j3.plugin.maven-surefire-report-plugin.version>
 		<j3.plugin.prettier-plugin-properties.version>0.1.0</j3.plugin.prettier-plugin-properties.version>
 		<j3.plugin.prettier-plugin-sh.version>0.10.0</j3.plugin.prettier-plugin-sh.version>
 		<j3.plugin.prettier-xml.version>2.0.1</j3.plugin.prettier-xml.version>
 		<j3.plugin.prettier.version>2.6.2</j3.plugin.prettier.version>
 		<j3.plugin.sonar-maven-plugin.version>3.9.1.2184</j3.plugin.sonar-maven-plugin.version>
 		<j3.plugin.spotless-maven-plugin.version>2.22.0</j3.plugin.spotless-maven-plugin.version>
-		<j3.plugin.versions-maven-plugin.version>2.9.0</j3.plugin.versions-maven-plugin.version>
+		<j3.plugin.versions-maven-plugin.version>2.10.0</j3.plugin.versions-maven-plugin.version>
 
 		<j3.var.nextMajorVersion>${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT</j3.var.nextMajorVersion>
 		<j3.var.nextMinorVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</j3.var.nextMinorVersion>
