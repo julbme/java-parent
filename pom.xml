@@ -65,9 +65,10 @@
 
 	<properties>
 
+		<j3.dependency.annotations-api.version>6.0.53</j3.dependency.annotations-api.version>
 		<j3.dependency.assertj-core.version>3.22.0</j3.dependency.assertj-core.version>
 		<j3.dependency.awaitility.version>4.2.0</j3.dependency.awaitility.version>
-		<j3.dependency.client-java.version>15.0.0</j3.dependency.client-java.version>
+		<j3.dependency.client-java.version>15.0.1</j3.dependency.client-java.version>
 		<j3.dependency.commons-codec.version>1.15</j3.dependency.commons-codec.version>
 		<j3.dependency.commons-collections4.version>4.4</j3.dependency.commons-collections4.version>
 		<j3.dependency.commons-io.version>2.11.0</j3.dependency.commons-io.version>
@@ -75,25 +76,27 @@
 		<j3.dependency.commons-text.version>1.9</j3.dependency.commons-text.version>
 		<j3.dependency.consul-api.version>1.4.5</j3.dependency.consul-api.version>
 		<j3.dependency.eclipse-collections.version>11.0.0</j3.dependency.eclipse-collections.version>
-		<j3.dependency.github-api.version>1.303</j3.dependency.github-api.version>
+		<j3.dependency.github-api.version>1.306</j3.dependency.github-api.version>
+		<j3.dependency.grpc-bom.version>1.46.0</j3.dependency.grpc-bom.version>
 		<j3.dependency.guava.version>31.1-jre</j3.dependency.guava.version>
 		<j3.dependency.jackson-bom.version>2.13.1</j3.dependency.jackson-bom.version>
 		<j3.dependency.junit-jupiter-engine.version>5.8.2</j3.dependency.junit-jupiter-engine.version>
 		<j3.dependency.logback.version>1.2.11</j3.dependency.logback.version>
-		<j3.dependency.lombok.version>1.18.22</j3.dependency.lombok.version>
-		<j3.dependency.mockito-bom.version>4.4.0</j3.dependency.mockito-bom.version>
+		<j3.dependency.lombok.version>1.18.24</j3.dependency.lombok.version>
+		<j3.dependency.mockito-bom.version>4.5.1</j3.dependency.mockito-bom.version>
+		<j3.dependency.protobuf-bom.version>3.20.1</j3.dependency.protobuf-bom.version>
 		<j3.dependency.semver4j.version>3.1.0</j3.dependency.semver4j.version>
 		<j3.dependency.slf4j-api.version>1.7.36</j3.dependency.slf4j-api.version>
-		<j3.dependency.spring-boot-dependencies.version>2.6.6</j3.dependency.spring-boot-dependencies.version>
+		<j3.dependency.spring-boot-dependencies.version>2.6.7</j3.dependency.spring-boot-dependencies.version>
 		<j3.dependency.spring-cloud-dependencies.version>2021.0.1</j3.dependency.spring-cloud-dependencies.version>
 		<j3.dependency.system-lambda.version>1.2.1</j3.dependency.system-lambda.version>
-		<j3.dependency.testcontainers-bom.version>1.16.3</j3.dependency.testcontainers-bom.version>
+		<j3.dependency.testcontainers-bom.version>1.17.1</j3.dependency.testcontainers-bom.version>
 
 		<j3.plugin.build-helper-maven-plugin.version>3.3.0</j3.plugin.build-helper-maven-plugin.version>
 		<j3.plugin.git-commit-id-maven-plugin.version>5.0.0</j3.plugin.git-commit-id-maven-plugin.version>
 		<j3.plugin.jacoco-maven-plugin.version>0.8.8</j3.plugin.jacoco-maven-plugin.version>
 		<j3.plugin.jib-maven-plugin.version>3.2.1</j3.plugin.jib-maven-plugin.version>
-		<j3.plugin.jreleaser-maven-plugin.version>1.0.0-RC2</j3.plugin.jreleaser-maven-plugin.version>
+		<j3.plugin.jreleaser-maven-plugin.version>1.0.0</j3.plugin.jreleaser-maven-plugin.version>
 		<j3.plugin.maven-antrun-plugin.version>3.0.0</j3.plugin.maven-antrun-plugin.version>
 		<j3.plugin.maven-assembly-plugin.version>3.3.0</j3.plugin.maven-assembly-plugin.version>
 		<j3.plugin.maven-clean-plugin.version>3.2.0</j3.plugin.maven-clean-plugin.version>
@@ -112,10 +115,12 @@
 		<j3.plugin.maven-source-plugin.version>3.2.1</j3.plugin.maven-source-plugin.version>
 		<j3.plugin.maven-surefire-plugin.version>3.0.0-M6</j3.plugin.maven-surefire-plugin.version>
 		<j3.plugin.maven-surefire-report-plugin.version>3.0.0-M6</j3.plugin.maven-surefire-report-plugin.version>
+		<j3.plugin.os-maven-plugin.version>1.7.0</j3.plugin.os-maven-plugin.version>
 		<j3.plugin.prettier-plugin-properties.version>0.1.0</j3.plugin.prettier-plugin-properties.version>
 		<j3.plugin.prettier-plugin-sh.version>0.10.0</j3.plugin.prettier-plugin-sh.version>
 		<j3.plugin.prettier-xml.version>2.0.1</j3.plugin.prettier-xml.version>
 		<j3.plugin.prettier.version>2.6.2</j3.plugin.prettier.version>
+		<j3.plugin.protobuf-maven-plugin.version>0.6.1</j3.plugin.protobuf-maven-plugin.version>
 		<j3.plugin.sonar-maven-plugin.version>3.9.1.2184</j3.plugin.sonar-maven-plugin.version>
 		<j3.plugin.spotless-maven-plugin.version>2.22.0</j3.plugin.spotless-maven-plugin.version>
 		<j3.plugin.versions-maven-plugin.version>2.10.0</j3.plugin.versions-maven-plugin.version>
@@ -134,6 +139,13 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>io.grpc</groupId>
+				<artifactId>grpc-bom</artifactId>
+				<version>${j3.dependency.grpc-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson</groupId>
 				<artifactId>jackson-bom</artifactId>
@@ -168,6 +180,11 @@
 				<version>${j3.dependency.testcontainers-bom.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tomcat</groupId>
+				<artifactId>annotations-api</artifactId>
+				<version>${j3.dependency.annotations-api.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.assertj</groupId>
@@ -414,6 +431,11 @@
 					<groupId>org.sonarsource.scanner.maven</groupId>
 					<artifactId>sonar-maven-plugin</artifactId>
 					<version>${j3.plugin.sonar-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.xolstice.maven.plugins</groupId>
+					<artifactId>protobuf-maven-plugin</artifactId>
+					<version>${j3.plugin.protobuf-maven-plugin.version}</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -705,6 +727,13 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>kr.motd.maven</groupId>
+				<artifactId>os-maven-plugin</artifactId>
+				<version>${j3.plugin.os-maven-plugin.version}</version>
+			</extension>
+		</extensions>
 	</build>
 	<reporting>
 		<plugins>
