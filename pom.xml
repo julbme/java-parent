@@ -68,6 +68,8 @@
 		<j3.dependency.annotations-api.version>6.0.53</j3.dependency.annotations-api.version>
 		<j3.dependency.assertj-core.version>3.22.0</j3.dependency.assertj-core.version>
 		<j3.dependency.awaitility.version>4.2.0</j3.dependency.awaitility.version>
+		<j3.dependency.bouncycastle.version>1.70</j3.dependency.bouncycastle.version>
+		<j3.dependency.byte-buddy.version>1.12.9</j3.dependency.byte-buddy.version>
 		<j3.dependency.client-java.version>15.0.1</j3.dependency.client-java.version>
 		<j3.dependency.commons-codec.version>1.15</j3.dependency.commons-codec.version>
 		<j3.dependency.commons-collections4.version>4.4</j3.dependency.commons-collections4.version>
@@ -80,10 +82,16 @@
 		<j3.dependency.grpc-bom.version>1.46.0</j3.dependency.grpc-bom.version>
 		<j3.dependency.guava.version>31.1-jre</j3.dependency.guava.version>
 		<j3.dependency.jackson-bom.version>2.13.1</j3.dependency.jackson-bom.version>
+		<j3.dependency.json-unit.version>2.34.0</j3.dependency.json-unit.version>
+		<j3.dependency.json.version>20220320</j3.dependency.json.version>
 		<j3.dependency.junit-jupiter-engine.version>5.8.2</j3.dependency.junit-jupiter-engine.version>
+		<j3.dependency.libphonenumber.version>8.12.47</j3.dependency.libphonenumber.version>
+		<j3.dependency.logback-json.version>0.1.5</j3.dependency.logback-json.version>
 		<j3.dependency.logback.version>1.2.11</j3.dependency.logback.version>
 		<j3.dependency.lombok.version>1.18.24</j3.dependency.lombok.version>
 		<j3.dependency.mockito-bom.version>4.5.1</j3.dependency.mockito-bom.version>
+		<j3.dependency.nimbus-jose-jwt.version>9.22</j3.dependency.nimbus-jose-jwt.version>
+		<j3.dependency.owasp-java-html-sanitizer.version>20211018.2</j3.dependency.owasp-java-html-sanitizer.version>
 		<j3.dependency.protobuf-bom.version>3.20.1</j3.dependency.protobuf-bom.version>
 		<j3.dependency.semver4j.version>3.1.0</j3.dependency.semver4j.version>
 		<j3.dependency.slf4j-api.version>1.7.36</j3.dependency.slf4j-api.version>
@@ -91,12 +99,16 @@
 		<j3.dependency.spring-cloud-dependencies.version>2021.0.1</j3.dependency.spring-cloud-dependencies.version>
 		<j3.dependency.system-lambda.version>1.2.1</j3.dependency.system-lambda.version>
 		<j3.dependency.testcontainers-bom.version>1.17.1</j3.dependency.testcontainers-bom.version>
+		<j3.dependency.totp.version>1.7.1</j3.dependency.totp.version>
+		<j3.dependency.uap-java.version>1.5.2</j3.dependency.uap-java.version>
+		<j3.dependency.zxing.version>3.4.1</j3.dependency.zxing.version>
 
 		<j3.plugin.build-helper-maven-plugin.version>3.3.0</j3.plugin.build-helper-maven-plugin.version>
 		<j3.plugin.git-commit-id-maven-plugin.version>5.0.0</j3.plugin.git-commit-id-maven-plugin.version>
 		<j3.plugin.jacoco-maven-plugin.version>0.8.8</j3.plugin.jacoco-maven-plugin.version>
 		<j3.plugin.jib-maven-plugin.version>3.2.1</j3.plugin.jib-maven-plugin.version>
 		<j3.plugin.jreleaser-maven-plugin.version>1.0.0</j3.plugin.jreleaser-maven-plugin.version>
+		<j3.plugin.lombok-maven-plugin.version>1.18.20.0</j3.plugin.lombok-maven-plugin.version>
 		<j3.plugin.maven-antrun-plugin.version>3.0.0</j3.plugin.maven-antrun-plugin.version>
 		<j3.plugin.maven-assembly-plugin.version>3.3.0</j3.plugin.maven-assembly-plugin.version>
 		<j3.plugin.maven-clean-plugin.version>3.2.0</j3.plugin.maven-clean-plugin.version>
@@ -197,6 +209,26 @@
 				<version>${j3.dependency.awaitility.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcpkix-jdk15on</artifactId>
+				<version>${j3.dependency.bouncycastle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk15on</artifactId>
+				<version>${j3.dependency.bouncycastle.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.bytebuddy</groupId>
+				<artifactId>byte-buddy</artifactId>
+				<version>${j3.dependency.byte-buddy.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.bytebuddy</groupId>
+				<artifactId>byte-buddy-agent</artifactId>
+				<version>${j3.dependency.byte-buddy.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>io.kubernetes</groupId>
 				<artifactId>client-java</artifactId>
 				<version>${j3.dependency.client-java.version}</version>
@@ -232,6 +264,11 @@
 				<version>${j3.dependency.consul-api.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>core</artifactId>
+				<version>${j3.dependency.zxing.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.eclipse.collections</groupId>
 				<artifactId>eclipse-collections</artifactId>
 				<version>${j3.dependency.eclipse-collections.version}</version>
@@ -252,9 +289,24 @@
 				<version>${j3.dependency.guava.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>com.google.zxing</groupId>
+				<artifactId>javase</artifactId>
+				<version>${j3.dependency.zxing.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>jcl-over-slf4j</artifactId>
 				<version>${j3.dependency.slf4j-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>${j3.dependency.json.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.javacrumbs.json-unit</groupId>
+				<artifactId>json-unit</artifactId>
+				<version>${j3.dependency.json-unit.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -265,6 +317,11 @@
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter-engine</artifactId>
 				<version>${j3.dependency.junit-jupiter-engine.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.libphonenumber</groupId>
+				<artifactId>libphonenumber</artifactId>
+				<version>${j3.dependency.libphonenumber.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -282,9 +339,29 @@
 				<version>${j3.dependency.logback.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>ch.qos.logback.contrib</groupId>
+				<artifactId>logback-jackson</artifactId>
+				<version>${j3.dependency.logback-json.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback.contrib</groupId>
+				<artifactId>logback-json-classic</artifactId>
+				<version>${j3.dependency.logback-json.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
 				<version>${j3.dependency.lombok.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.nimbusds</groupId>
+				<artifactId>nimbus-jose-jwt</artifactId>
+				<version>${j3.dependency.nimbus-jose-jwt.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
+				<artifactId>owasp-java-html-sanitizer</artifactId>
+				<version>${j3.dependency.owasp-java-html-sanitizer.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.vdurmont</groupId>
@@ -300,6 +377,16 @@
 				<groupId>com.github.stefanbirkner</groupId>
 				<artifactId>system-lambda</artifactId>
 				<version>${j3.dependency.system-lambda.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>dev.samstevens.totp</groupId>
+				<artifactId>totp</artifactId>
+				<version>${j3.dependency.totp.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.ua-parser</groupId>
+				<artifactId>uap-java</artifactId>
+				<version>${j3.dependency.uap-java.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -426,6 +513,11 @@
 					<groupId>org.jreleaser</groupId>
 					<artifactId>jreleaser-maven-plugin</artifactId>
 					<version>${j3.plugin.jreleaser-maven-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok-maven-plugin</artifactId>
+					<version>${j3.plugin.lombok-maven-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.sonarsource.scanner.maven</groupId>
@@ -681,6 +773,21 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalOptions>-Xdoclint:none</additionalOptions>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
@@ -695,6 +802,18 @@
 						<id>attach-descriptor</id>
 						<goals>
 							<goal>attach-descriptor</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
 						</goals>
 					</execution>
 				</executions>
@@ -726,6 +845,18 @@
 					<configFile>jreleaser.yml</configFile>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>delombok</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<extensions>
 			<extension>
@@ -741,7 +872,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
-					<additionalOptions>-package</additionalOptions>
+					<additionalOptions>-Xdoclint:none</additionalOptions>
 				</configuration>
 			</plugin>
 			<plugin>
