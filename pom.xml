@@ -64,69 +64,74 @@
 	</distributionManagement>
 
 	<properties>
-
 		<j3.dependency.annotations-api.version>6.0.53</j3.dependency.annotations-api.version>
-		<j3.dependency.assertj-core.version>3.22.0</j3.dependency.assertj-core.version>
+		<j3.dependency.assertj-core.version>3.23.1</j3.dependency.assertj-core.version>
 		<j3.dependency.awaitility.version>4.2.0</j3.dependency.awaitility.version>
 		<j3.dependency.bouncycastle.version>1.70</j3.dependency.bouncycastle.version>
-		<j3.dependency.byte-buddy.version>1.12.10</j3.dependency.byte-buddy.version>
-		<j3.dependency.client-java.version>15.0.1</j3.dependency.client-java.version>
+		<j3.dependency.byte-buddy.version>1.12.12</j3.dependency.byte-buddy.version>
+		<j3.dependency.client-java.version>16.0.0</j3.dependency.client-java.version>
 		<j3.dependency.commons-codec.version>1.15</j3.dependency.commons-codec.version>
 		<j3.dependency.commons-collections4.version>4.4</j3.dependency.commons-collections4.version>
 		<j3.dependency.commons-io.version>2.11.0</j3.dependency.commons-io.version>
 		<j3.dependency.commons-lang3.version>3.12.0</j3.dependency.commons-lang3.version>
 		<j3.dependency.commons-text.version>1.9</j3.dependency.commons-text.version>
 		<j3.dependency.consul-api.version>1.4.5</j3.dependency.consul-api.version>
-		<j3.dependency.eclipse-collections.version>11.0.0</j3.dependency.eclipse-collections.version>
-		<j3.dependency.github-api.version>1.306</j3.dependency.github-api.version>
-		<j3.dependency.grpc-bom.version>1.46.0</j3.dependency.grpc-bom.version>
+		<j3.dependency.eclipse-collections.version>11.1.0</j3.dependency.eclipse-collections.version>
+		<j3.dependency.github-api.version>1.307</j3.dependency.github-api.version>
+		<j3.dependency.grpc-bom.version>1.48.0</j3.dependency.grpc-bom.version>
 		<j3.dependency.guava.version>31.1-jre</j3.dependency.guava.version>
 		<j3.dependency.jackson-bom.version>2.13.3</j3.dependency.jackson-bom.version>
 		<j3.dependency.json-unit.version>2.35.0</j3.dependency.json-unit.version>
 		<j3.dependency.json.version>20220320</j3.dependency.json.version>
-		<j3.dependency.junit-jupiter-engine.version>5.8.2</j3.dependency.junit-jupiter-engine.version>
-		<j3.dependency.libphonenumber.version>8.12.48</j3.dependency.libphonenumber.version>
+		<j3.dependency.junit-jupiter-engine.version>5.9.0</j3.dependency.junit-jupiter-engine.version>
+		<j3.dependency.libphonenumber.version>8.12.52</j3.dependency.libphonenumber.version>
 		<j3.dependency.logback-json.version>0.1.5</j3.dependency.logback-json.version>
 		<j3.dependency.logback.version>1.2.11</j3.dependency.logback.version>
 		<j3.dependency.lombok.version>1.18.24</j3.dependency.lombok.version>
-		<j3.dependency.mockito-bom.version>4.5.1</j3.dependency.mockito-bom.version>
-		<j3.dependency.nimbus-jose-jwt.version>9.22</j3.dependency.nimbus-jose-jwt.version>
-		<j3.dependency.owasp-java-html-sanitizer.version>20211018.2</j3.dependency.owasp-java-html-sanitizer.version>
+		<j3.dependency.maven-plugin-annotations.version>3.6.4</j3.dependency.maven-plugin-annotations.version>
+		<j3.dependency.maven-plugin-api.version>3.8.6</j3.dependency.maven-plugin-api.version>
+		<j3.dependency.maven-project.version>2.2.1</j3.dependency.maven-project.version>
+		<j3.dependency.mockito-bom.version>4.6.1</j3.dependency.mockito-bom.version>
+		<j3.dependency.nimbus-jose-jwt.version>9.23</j3.dependency.nimbus-jose-jwt.version>
+		<j3.dependency.owasp-java-html-sanitizer.version>20220608.1</j3.dependency.owasp-java-html-sanitizer.version>
+		<j3.dependency.picocli.version>4.6.3</j3.dependency.picocli.version>
 		<j3.dependency.protobuf-bom.version>3.20.1</j3.dependency.protobuf-bom.version>
 		<j3.dependency.semver4j.version>3.1.0</j3.dependency.semver4j.version>
 		<j3.dependency.slf4j-api.version>1.7.36</j3.dependency.slf4j-api.version>
-		<j3.dependency.spring-boot-dependencies.version>2.6.7</j3.dependency.spring-boot-dependencies.version>
-		<j3.dependency.spring-cloud-dependencies.version>2021.0.2</j3.dependency.spring-cloud-dependencies.version>
+		<j3.dependency.spring-boot-dependencies.version>2.7.2</j3.dependency.spring-boot-dependencies.version>
+		<j3.dependency.spring-cloud-dependencies.version>2021.0.3</j3.dependency.spring-cloud-dependencies.version>
 		<j3.dependency.system-lambda.version>1.2.1</j3.dependency.system-lambda.version>
-		<j3.dependency.testcontainers-bom.version>1.17.1</j3.dependency.testcontainers-bom.version>
+		<j3.dependency.testcontainers-bom.version>1.17.3</j3.dependency.testcontainers-bom.version>
 		<j3.dependency.totp.version>1.7.1</j3.dependency.totp.version>
-		<j3.dependency.uap-java.version>1.5.2</j3.dependency.uap-java.version>
+		<j3.dependency.uap-java.version>1.5.3</j3.dependency.uap-java.version>
 		<j3.dependency.zxing.version>3.5.0</j3.dependency.zxing.version>
 
 		<j3.plugin.build-helper-maven-plugin.version>3.3.0</j3.plugin.build-helper-maven-plugin.version>
 		<j3.plugin.git-commit-id-maven-plugin.version>5.0.0</j3.plugin.git-commit-id-maven-plugin.version>
 		<j3.plugin.jacoco-maven-plugin.version>0.8.8</j3.plugin.jacoco-maven-plugin.version>
 		<j3.plugin.jib-maven-plugin.version>3.2.1</j3.plugin.jib-maven-plugin.version>
-		<j3.plugin.jreleaser-maven-plugin.version>1.0.0</j3.plugin.jreleaser-maven-plugin.version>
+		<j3.plugin.jreleaser-maven-plugin.version>1.1.0</j3.plugin.jreleaser-maven-plugin.version>
 		<j3.plugin.lombok-maven-plugin.version>1.18.20.0</j3.plugin.lombok-maven-plugin.version>
-		<j3.plugin.maven-antrun-plugin.version>3.0.0</j3.plugin.maven-antrun-plugin.version>
-		<j3.plugin.maven-assembly-plugin.version>3.3.0</j3.plugin.maven-assembly-plugin.version>
+		<j3.plugin.maven-antrun-plugin.version>3.1.0</j3.plugin.maven-antrun-plugin.version>
+		<j3.plugin.maven-assembly-plugin.version>3.4.2</j3.plugin.maven-assembly-plugin.version>
 		<j3.plugin.maven-clean-plugin.version>3.2.0</j3.plugin.maven-clean-plugin.version>
 		<j3.plugin.maven-compiler-plugin.version>3.10.1</j3.plugin.maven-compiler-plugin.version>
-		<j3.plugin.maven-deploy-plugin.version>3.0.0-M2</j3.plugin.maven-deploy-plugin.version>
-		<j3.plugin.maven-enforcer-plugin.version>3.0.0</j3.plugin.maven-enforcer-plugin.version>
+		<j3.plugin.maven-deploy-plugin.version>3.0.0</j3.plugin.maven-deploy-plugin.version>
+		<j3.plugin.maven-enforcer-plugin.version>3.1.0</j3.plugin.maven-enforcer-plugin.version>
 		<j3.plugin.maven-fluido-skin.version>1.10.0</j3.plugin.maven-fluido-skin.version>
 		<j3.plugin.maven-gpg-plugin.version>3.0.1</j3.plugin.maven-gpg-plugin.version>
 		<j3.plugin.maven-help-plugin.version>3.2.0</j3.plugin.maven-help-plugin.version>
-		<j3.plugin.maven-install-plugin.version>3.0.0-M1</j3.plugin.maven-install-plugin.version>
+		<j3.plugin.maven-install-plugin.version>3.0.1</j3.plugin.maven-install-plugin.version>
 		<j3.plugin.maven-jar-plugin.version>3.2.2</j3.plugin.maven-jar-plugin.version>
-		<j3.plugin.maven-javadoc-plugin.version>3.3.2</j3.plugin.maven-javadoc-plugin.version>
-		<j3.plugin.maven-project-info-reports-plugin.version>3.2.2</j3.plugin.maven-project-info-reports-plugin.version>
+		<j3.plugin.maven-javadoc-plugin.version>3.4.0</j3.plugin.maven-javadoc-plugin.version>
+		<j3.plugin.maven-plugin-plugin.version>3.6.4</j3.plugin.maven-plugin-plugin.version>
+		<j3.plugin.maven-project-info-reports-plugin.version>3.4.0</j3.plugin.maven-project-info-reports-plugin.version>
+		<j3.plugin.maven-release-plugin.version>3.0.0-M6</j3.plugin.maven-release-plugin.version>
 		<j3.plugin.maven-shade-plugin.version>3.3.0</j3.plugin.maven-shade-plugin.version>
 		<j3.plugin.maven-site-plugin.version>3.11.0</j3.plugin.maven-site-plugin.version>
 		<j3.plugin.maven-source-plugin.version>3.2.1</j3.plugin.maven-source-plugin.version>
-		<j3.plugin.maven-surefire-plugin.version>3.0.0-M6</j3.plugin.maven-surefire-plugin.version>
-		<j3.plugin.maven-surefire-report-plugin.version>3.0.0-M6</j3.plugin.maven-surefire-report-plugin.version>
+		<j3.plugin.maven-surefire-plugin.version>3.0.0-M7</j3.plugin.maven-surefire-plugin.version>
+		<j3.plugin.maven-surefire-report-plugin.version>3.0.0-M7</j3.plugin.maven-surefire-report-plugin.version>
 		<j3.plugin.os-maven-plugin.version>1.7.0</j3.plugin.os-maven-plugin.version>
 		<j3.plugin.prettier-plugin-properties.version>0.1.0</j3.plugin.prettier-plugin-properties.version>
 		<j3.plugin.prettier-plugin-sh.version>0.10.0</j3.plugin.prettier-plugin-sh.version>
@@ -134,13 +139,16 @@
 		<j3.plugin.prettier.version>2.6.2</j3.plugin.prettier.version>
 		<j3.plugin.protobuf-maven-plugin.version>0.6.1</j3.plugin.protobuf-maven-plugin.version>
 		<j3.plugin.sonar-maven-plugin.version>3.9.1.2184</j3.plugin.sonar-maven-plugin.version>
-		<j3.plugin.spotless-maven-plugin.version>2.22.0</j3.plugin.spotless-maven-plugin.version>
-		<j3.plugin.versions-maven-plugin.version>2.10.0</j3.plugin.versions-maven-plugin.version>
+		<j3.plugin.spotless-maven-plugin.version>2.24.0</j3.plugin.spotless-maven-plugin.version>
+		<j3.plugin.versions-maven-plugin.version>2.11.0</j3.plugin.versions-maven-plugin.version>
+		<j3.var.buildDateTime>${maven.build.timestamp}</j3.var.buildDateTime>
 
 		<j3.var.nextMajorVersion>${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT</j3.var.nextMajorVersion>
 		<j3.var.nextMinorVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</j3.var.nextMinorVersion>
 		<j3.var.nextPatchVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT</j3.var.nextPatchVersion>
 		<j3.var.releaseVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</j3.var.releaseVersion>
+
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss.SSSZ</maven.build.timestamp.format>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -354,6 +362,21 @@
 				<version>${j3.dependency.lombok.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.apache.maven.plugin-tools</groupId>
+				<artifactId>maven-plugin-annotations</artifactId>
+				<version>${j3.dependency.maven-plugin-annotations.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.maven</groupId>
+				<artifactId>maven-plugin-api</artifactId>
+				<version>${j3.dependency.maven-plugin-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.maven</groupId>
+				<artifactId>maven-project</artifactId>
+				<version>${j3.dependency.maven-project.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>com.nimbusds</groupId>
 				<artifactId>nimbus-jose-jwt</artifactId>
 				<version>${j3.dependency.nimbus-jose-jwt.version}</version>
@@ -362,6 +385,16 @@
 				<groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
 				<artifactId>owasp-java-html-sanitizer</artifactId>
 				<version>${j3.dependency.owasp-java-html-sanitizer.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>info.picocli</groupId>
+				<artifactId>picocli</artifactId>
+				<version>${j3.dependency.picocli.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>info.picocli</groupId>
+				<artifactId>picocli-codegen</artifactId>
+				<version>${j3.dependency.picocli.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.vdurmont</groupId>
@@ -466,8 +499,18 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-plugin-plugin</artifactId>
+					<version>${j3.plugin.maven-plugin-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>${j3.plugin.maven-project-info-reports-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${j3.plugin.maven-release-plugin.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -789,7 +832,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>3.0.0-M5</version>
 				<configuration>
 					<tagNameFormat>v@{project.version}</tagNameFormat>
 				</configuration>
