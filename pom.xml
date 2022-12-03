@@ -141,12 +141,22 @@
 		<j3.plugin.sonar-maven-plugin.version>3.9.1.2184</j3.plugin.sonar-maven-plugin.version>
 		<j3.plugin.spotless-maven-plugin.version>2.28.0</j3.plugin.spotless-maven-plugin.version>
 		<j3.plugin.versions-maven-plugin.version>2.13.0</j3.plugin.versions-maven-plugin.version>
-		<j3.var.buildDateTime>${maven.build.timestamp}</j3.var.buildDateTime>
+		<j3.var.dockerShaBuildTag>${j3.var.syntheticVersion}+${git.commit.id.abbrev}</j3.var.dockerShaBuildTag>
+		<j3.var.dockerTag>${j3.var.syntheticVersion}</j3.var.dockerTag>
+		<j3.var.dockerTimestampBuildTag>${j3.var.syntheticVersion}+${j3.var.buildTimestamp}</j3.var.dockerTimestampBuildTag>
+		<j3.var.dockerTimestampShaBuildTag>${j3.var.syntheticVersion}+${j3.var.buildTimestamp}.${git.commit.id.abbrev}</j3.var.dockerTimestampShaBuildTag>
 
 		<j3.var.nextMajorVersion>${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT</j3.var.nextMajorVersion>
 		<j3.var.nextMinorVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</j3.var.nextMinorVersion>
 		<j3.var.nextPatchVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT</j3.var.nextPatchVersion>
+		<j3.var.originalVersion>${project.version}</j3.var.originalVersion>
 		<j3.var.releaseVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.incrementalVersion}</j3.var.releaseVersion>
+		<j3.var.shaBuildVersion>${j3.var.syntheticVersion}+${git.commit.id.abbrev}</j3.var.shaBuildVersion>
+		<j3.var.shaBuildVersionBuild>${git.commit.id.abbrev}</j3.var.shaBuildVersionBuild>
+		<j3.var.timestampBuildVersion>${j3.var.syntheticVersion}+${j3.var.buildTimestamp}</j3.var.timestampBuildVersion>
+		<j3.var.timestampBuildVersionBuild>${j3.var.buildTimestamp}</j3.var.timestampBuildVersionBuild>
+		<j3.var.timestampShaBuildVersion>${j3.var.syntheticVersion}+${j3.var.buildTimestamp}.${git.commit.id.abbrev}</j3.var.timestampShaBuildVersion>
+		<j3.var.timestampShaBuildVersionBuild>${j3.var.buildTimestamp}.${git.commit.id.abbrev}</j3.var.timestampShaBuildVersionBuild>
 
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss.SSSZ</maven.build.timestamp.format>
 
@@ -779,19 +789,20 @@
 				<artifactId>git-commit-id-maven-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>get-the-git-infos</id>
-						<goals>
-							<goal>revision</goal>
-						</goals>
-						<configuration>
-							<skipPoms>false</skipPoms>
-						</configuration>
-					</execution>
-					<execution>
 						<id>validate-the-git-infos</id>
 						<goals>
 							<goal>validateRevision</goal>
 						</goals>
+					</execution>
+					<execution>
+						<id>get-the-git-infos</id>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+						<phase>validate</phase>
+						<configuration>
+							<skipPoms>false</skipPoms>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -869,6 +880,41 @@
 						<goals>
 							<goal>parse-version</goal>
 						</goals>
+					</execution>
+					<execution>
+						<id>set-build-datetime</id>
+						<goals>
+							<goal>timestamp-property</goal>
+						</goals>
+						<configuration>
+							<locale>en_US</locale>
+							<name>j3.var.buildDateTime</name>
+							<pattern>yyyy-MM-dd'T'HH:mm:ss.SSSZ</pattern>
+						</configuration>
+					</execution>
+					<execution>
+						<id>set-build-timestamp</id>
+						<goals>
+							<goal>timestamp-property</goal>
+						</goals>
+						<configuration>
+							<locale>en_US</locale>
+							<name>j3.var.buildTimestamp</name>
+							<pattern>yyyyMMddHHmmss</pattern>
+						</configuration>
+					</execution>
+					<execution>
+						<id>set-synthetic-version</id>
+						<goals>
+							<goal>regex-property</goal>
+						</goals>
+						<configuration>
+							<name>j3.var.syntheticVersion</name>
+							<value>${project.version}</value>
+							<regex>^([0-9]+)\.([0-9]+)\.([0-9]+)-SNAPSHOT$</regex>
+							<replacement>$1.$2.$3-unstable</replacement>
+							<failIfNoMatch>false</failIfNoMatch>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -953,12 +999,7 @@
 			</build>
 		</profile>
 		<profile>
-			<id>change-version-patch</id>
-			<activation>
-				<property>
-					<name>changeVersionPatch</name>
-				</property>
-			</activation>
+			<id>update-version-files</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -973,259 +1014,8 @@
 								<phase>validate</phase>
 								<configuration>
 									<target>
-										<echo file="VERSION">${j3.var.nextPatchVersion}</echo>
+										<echo file="VERSION">${project.version}</echo>
 									</target>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>versions-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>set</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<newVersion>${j3.var.nextPatchVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>change-version-minor</id>
-			<activation>
-				<property>
-					<name>changeVersionMinor</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<target>
-										<echo file="VERSION">${j3.var.nextMinorVersion}</echo>
-									</target>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>versions-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>set</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<newVersion>${j3.var.nextMinorVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>change-version-major</id>
-			<activation>
-				<property>
-					<name>changeVersionMajor</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<target>
-										<echo file="VERSION">${j3.var.nextMajorVersion}</echo>
-									</target>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>versions-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>set</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<newVersion>${j3.var.nextMajorVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>change-version-release</id>
-			<activation>
-				<property>
-					<name>changeVersionRelease</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<target>
-										<echo file="VERSION">${j3.var.releaseVersion}</echo>
-									</target>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>versions-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>set</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<newVersion>${j3.var.releaseVersion}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>change-version-custom</id>
-			<activation>
-				<property>
-					<name>changeVersionCustom</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>update-version-file</id>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<target>
-										<echo file="VERSION">${changeVersionCustom}</echo>
-									</target>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.codehaus.mojo</groupId>
-						<artifactId>versions-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>set</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<newVersion>${changeVersionCustom}</newVersion>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>current-version</id>
-			<activation>
-				<property>
-					<name>currentVersion</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-help-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>evaluate</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<expression>project.version</expression>
-									<forceStdout>true</forceStdout>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>current-release-version</id>
-			<activation>
-				<property>
-					<name>currentReleaseVersion</name>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-help-plugin</artifactId>
-						<executions>
-							<execution>
-								<goals>
-									<goal>evaluate</goal>
-								</goals>
-								<phase>validate</phase>
-								<configuration>
-									<expression>j3.var.releaseVersion</expression>
-									<forceStdout>true</forceStdout>
 								</configuration>
 							</execution>
 						</executions>
