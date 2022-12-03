@@ -141,11 +141,11 @@
 		<j3.plugin.sonar-maven-plugin.version>3.9.1.2184</j3.plugin.sonar-maven-plugin.version>
 		<j3.plugin.spotless-maven-plugin.version>2.28.0</j3.plugin.spotless-maven-plugin.version>
 		<j3.plugin.versions-maven-plugin.version>2.13.0</j3.plugin.versions-maven-plugin.version>
+
 		<j3.var.dockerShaBuildTag>${j3.var.syntheticVersion}+${git.commit.id.abbrev}</j3.var.dockerShaBuildTag>
 		<j3.var.dockerTag>${j3.var.syntheticVersion}</j3.var.dockerTag>
 		<j3.var.dockerTimestampBuildTag>${j3.var.syntheticVersion}+${j3.var.buildTimestamp}</j3.var.dockerTimestampBuildTag>
 		<j3.var.dockerTimestampShaBuildTag>${j3.var.syntheticVersion}+${j3.var.buildTimestamp}.${git.commit.id.abbrev}</j3.var.dockerTimestampShaBuildTag>
-
 		<j3.var.nextMajorVersion>${parsedVersion.nextMajorVersion}.0.0-SNAPSHOT</j3.var.nextMajorVersion>
 		<j3.var.nextMinorVersion>${parsedVersion.majorVersion}.${parsedVersion.nextMinorVersion}.0-SNAPSHOT</j3.var.nextMinorVersion>
 		<j3.var.nextPatchVersion>${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${parsedVersion.nextIncrementalVersion}-SNAPSHOT</j3.var.nextPatchVersion>
