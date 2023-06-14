@@ -79,7 +79,7 @@
 		<j3.dependency.eclipse-collections.version>11.1.0</j3.dependency.eclipse-collections.version>
 		<j3.dependency.github-api.version>1.313</j3.dependency.github-api.version>
 		<j3.dependency.grpc-bom.version>1.51.0</j3.dependency.grpc-bom.version>
-		<j3.dependency.guava.version>31.1-jre</j3.dependency.guava.version>
+		<j3.dependency.guava.version>32.0.0-jre</j3.dependency.guava.version>
 		<j3.dependency.jackson-bom.version>2.14.1</j3.dependency.jackson-bom.version>
 		<j3.dependency.json-unit.version>2.36.0</j3.dependency.json-unit.version>
 		<j3.dependency.json.version>20220924</j3.dependency.json.version>
